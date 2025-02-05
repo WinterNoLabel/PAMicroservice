@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: PAMicroservice
+
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO}
+    show-sql: true
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        acknowledge-mode: manual
+
+minio:
+  url: "http://localhost:9000"
+  accessKey: 2YKqP2e5kba52qKwfSP8
+  secretKey: 2JCG0rUvXH9g7dbwJ591oNlfOEKw4TpFrVRZfCAO
+  bucketName: photos
+
+logging:
+  level:
+    org.hibernate.sql: debug
+    org.hibernate.orm.jdbc.bind: trace
