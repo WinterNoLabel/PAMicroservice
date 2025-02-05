@@ -13,19 +13,19 @@ spring:
     driver-class-name: org.postgresql.Driver
 
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+    host: ${RABBIT_HOST}
+    port: ${RABBIT_PORT}
+    username: ${RABBIT_USERNAME}
+    password: ${RABBIT_PASSWORD}
     listener:
       simple:
         acknowledge-mode: manual
 
 minio:
-  url: "http://localhost:9000"
-  accessKey: 2YKqP2e5kba52qKwfSP8
-  secretKey: 2JCG0rUvXH9g7dbwJ591oNlfOEKw4TpFrVRZfCAO
-  bucketName: photos
+  url: ${MINIO_URL}
+  accessKey: ${MINIO_ACCESS_KEY}
+  secretKey: ${MINIO_SECRET_KEY}
+  bucketName: ${MINIO_BUCKET_NAME}
 
 logging:
   level:
