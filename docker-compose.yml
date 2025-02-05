@@ -48,6 +48,8 @@ services:
 
 volumes:
   pg_data:
+  minio_data:
+
 
 networks:
   spring_network:
