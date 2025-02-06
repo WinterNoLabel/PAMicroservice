@@ -4,28 +4,28 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO}
+      ddl-auto: update
     show-sql: true
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    url: jdbc:postgresql://45.153.190.237:5432/default_dbPA
+    username: defaultPA
+    password: Mm6347455627.
     driver-class-name: org.postgresql.Driver
 
   rabbitmq:
-    host: ${RABBIT_HOST}
-    port: ${RABBIT_PORT}
-    username: ${RABBIT_USERNAME}
-    password: ${RABBIT_PASSWORD}
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
     listener:
       simple:
         acknowledge-mode: manual
 
 minio:
-  url: ${MINIO_URL}
-  accessKey: ${MINIO_ACCESS_KEY}
-  secretKey: ${MINIO_SECRET_KEY}
-  bucketName: ${MINIO_BUCKET_NAME}
+  url: http://45.153.190.237:9000
+  accessKey: OoB06v6642p0bikPNzHo
+  secretKey: MZTGkDoFOFW94xR6vNQiLiukU5rOD0CMN7vqGbQq
+  bucketName: photos
 
 logging:
   level:

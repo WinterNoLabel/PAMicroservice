@@ -36,3 +36,6 @@ build/
 .env
 mvnw.cmd
 mvnw
+
+src/main/resources/application.yaml
+
