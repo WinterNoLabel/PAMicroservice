@@ -1,10 +1,11 @@
-# Используем Maven для сборки
-FROM maven:3.8.6-openjdk-17-slim AS build
+# Этап сборки (Build stage)
+FROM maven:3.8.4-openjdk-17-slim AS build
 WORKDIR /app
-COPY . .
+COPY pom.xml .
+COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Используем OpenJDK для запуска
+# Этап запуска (Run stage)
 FROM openjdk:17.0.2-jdk-slim-buster
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
