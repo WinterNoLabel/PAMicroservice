@@ -28,7 +28,7 @@ public class UserProfileListener {
         try {
             UserRegisteredEvent event = objectMapper.readValue(message, UserRegisteredEvent.class);
 
-            Profile profile = profileService.createUserProfile(event.getUserId(), event.getUsername());
+            Profile profile = profileService.createUserProfile(event.getUser_id(), event.getUsername());
             channel.basicAck(tag, false);
 
         } catch (Exception e) {
